@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.picScroll-left{ 
+		width:1000px;  
+		position:relative;   
+		margin: 0px auto; 
+		box-shadow: 0px 1px 3px rgba(0,0,0,0.3), inset 0px 4px 2px -2px rgba(255,255,255,0.7), inset 0px -3px 1px -2px rgba(0,0,0,0.3), inset 0px -20px 200px -100px rgba(0,0,0,0.5);
+		border-radius:5px;
+		height: 155px;
+	}
+	.picScroll-left img.next{
+		cursor:pointer; 
+		position: absolute;
+		left: 0px;
+		top: 75px;
+		z-index:1;
+	}
+	.picScroll-left img.prev{
+		cursor:pointer; 
+		position: absolute;
+		right: 0px;
+		top: 75px;
+		z-index:1;
+	}
+	.picScroll-left .imgcon{
+		width:930px;/* dl*3+margin*/
+		height: 220px;
+		margin: 40px auto 0px;
+		position: relative;
+		overflow: hidden;
+	}
+	.picScroll-left .scrollcon{ 
+		width:1000%;
+		position: absolute;
+		left: 0px;
+		top:0px;
+	}
+	.picScroll-left .imgcon ul{ 
+		overflow:hidden; 
+		zoom:1; 
+	}
+	.picScroll-left .imgcon ul li{ 
+		float:left; 
+		_display:inline; 
+		overflow:hidden; 
+		text-align:center;
+		list-style-type:none; 
+	}
+	.picScroll-left .imgcon ul li .pic{ 
+		text-align:center; 
+		float:left;
+	}
+	.picScroll-left .imgcon ul li .pic img{ 
+		width:160px; 
+		height:150px; 
+		display:block;  
+		padding:2px; 
+		border-radius: 10px;
+	}
+	.picScroll-left .imgcon ul li .pic a:hover img{ 
+		text-decoration:none; 
+		color:#333;  
+	}
+	.picScroll-left .imgcon ul li .title{ 
+		line-height:24px;   
+		width:150px;
+		height: 150px;
+		float:left;
+		text-align:left;
+	}
+	.picScroll-left .imgcon ul li .title a{ 
+		color:#2b2b2b;
+		font-family:微軟正黑體;
+	}
+	.picScroll-left .imgcon ul li .title span{ 
+		line-height:24px;   
+		text-align:left;
+		display:block;
+		font-size:12px;
+		padding:5px;
+	}
+	</style>
+</head>
+<body>
+	<!---->
+		<div class="picScroll-left">
+				<img src="images/pleft.png" alt="" class="next">
+				<img src="images/pright.png" alt="" class="prev">
+			<div class="imgcon">
+			<div class="scrollcon">
+				<ul>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic1.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>
+					</li>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic2.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>
+					</li>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic3.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>					
+					</li>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic4.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>					
+					</li>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic5.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>					
+					</li>
+					<li>
+						<div class="pic"><a href="itemlist.html" class="onceola"><img src="images/pic6.jpg" /></a></div>
+						<div class="title">
+							<span><a href="">14年前流浪狗「小白」來到斗六消防分隊，平日會跟著出勤，今天因腸胃炎併發症過世，消防弟兄列隊淚別、鳴車笛送最後一程。</a></span>
+						</div>					
+					</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+</body>
+<script>
+	var len=0;
+	var unm=$(".imgcon .scrollcon li").length;//獲取總得dl的個數
+	if(unm/3>parseInt(unm/3)){//總共劃分幾個區塊
+		len=parseInt(unm/3);
+	}else{
+		len=parseInt(unm/3)-1;
+	}
+	var click_num=0;
+	//左邊按鈕
+	$(".picScroll-left .prev").click(function(){
+		click_num++;//點+1
+		if(click_num <= len){
+			$(".scrollcon").animate({left:"-"+click_num*930+"px"},1000);
+		}else{
+			click_num=len;
+		};
+
+	});
+	//右邊按鈕
+	$(".picScroll-left .next").click(function(){
+		click_num--;
+		if(click_num >= 0){
+			$(".scrollcon").animate({left:"-"+click_num*930+"px"},1000);
+		}else{
+			click_num=0;
+		}
+	});
+</script>
+</html>
