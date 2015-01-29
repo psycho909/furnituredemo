@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>單項商品詳細資料</title>
+<script src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/fontstyle.css">
+<link rel="stylesheet" href="css/theme.css">
+<script src="js/theme.js"></script>
+<script>
+$.get("nav.html",function(data){
+  $("#nav").html(data);
+});
+</script>
+<style>
+	#itemnews{
+		width:1000px;
+		height: 500px;
+		margin: 8px auto;
+	}
+	/********************/
+	.itemshow{
+		width:479px;
+		height:500px ;
+		float:left;
+		border-right:1px solid #7F8C8D;
+		margin-right:20px;
+	}
+	/****************/
+	.itemflash{
+		width: 400px;
+		height: 360px;
+		margin: 0px auto;
+		position: relative;
+	}
+	/*.itemflash #imgs{
+		width: 460px;
+		height: 460px;
+		margin: 0px auto;
+		text-align: center;
+	}*/
+	.itemflash #itemimgs{
+		width: 400px;
+		height: 360px;
+		overflow: hidden;
+
+	}
+	.itemflash #itemimgs img{
+		width: 400px;
+		height: 360px;
+	}
+	.itemflash .itemcir{ 
+		width:460px;
+		height:80px; 
+		position:absolute;
+		left:-15px;
+		bottom: -100px; 
+	}
+	.itemflash .itemcir ul{
+		width:100%;
+		height: 30px;
+		margin: 0px auto;
+		text-align: center;
+		display: inline-block;
+	}
+	.itemflash .itemcir ul li{ 
+		float:left; 
+		width:80px; 
+		height:80px; 
+		text-align:center; 
+		cursor:pointer; 
+		margin-left:5px ;
+		list-style-type: none;
+	}
+	.itemflash .itemcir ul li img{ 
+		width:80px; 
+		height:80px;
+		border-radius:8px;
+		box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) ;
+	}
+	.itemflash ul li.itemhover{
+	}
+	/***********************/
+	.itemessage{
+		width:500px;
+		height:500px ;
+		float:left;
+	}
+	.itemessage .itemname{
+		width:250px;
+		height: 50px;
+		font-family: 微軟正黑體;
+		color: #34495E;
+		float:left;
+	}
+	.itemessage .breadcrumb{
+		width:250px;
+		height: 20px;
+		color:black;
+		float:left;
+		font-size:12px;
+	}
+	.itemessage .breadcrumb ul li{
+		list-style-type:none;
+		float:left;
+		margin: 2px;
+	}
+	.itemessage .breadcrumb ul li a{
+		text-decoration:none;
+		color:#7F8C8D;
+	}
+	.itemessage .breadcrumb ul li span{
+		color:#C0392B;
+	}
+	.itemessage .itemname p{
+		font-size:14px;
+	}
+	.itemessage .itemcash{
+		width:500px;
+		height: 30px;
+		color:#2980B9;
+		font-family: 微軟正黑體;
+		font-size:16px;
+		line-height:30px;
+		float:left;
+	}
+	.itemessage .itemcash span{
+		margin-left:5px;
+	}
+	.itemessage .itemcash .cash{
+		color:#C0392B;
+	}
+	.itemessage .itemshoplink{
+		width:500px;
+		height: 30px;
+		line-height:30px;
+		font-family: 微軟正黑體;
+		float:left;
+	}
+	.itemessage .itemshoplink a{
+		color:#2C3E50;
+	}
+	.itemessage .itemshoplink a:hover{
+		color:#2C3E50;
+		text-decoration:underline;
+	}
+	/***************/
+	.itemessage .itemdetailed{
+		width:500px;
+		height: 300px;
+		margin: 50px auto;
+		position: relative;
+		float:left;
+	}
+	.itemdetailed .itemtitle{
+		width:500px;
+		height: 30px;
+	}
+	.itemdetailed .itemtitle ul li{
+		list-style-type:none;
+		float: left;
+		width: 90px;
+		height: 30px;
+		line-height:30px;
+		border: 1px solid #7F8C8D;
+		border-bottom:0px;
+		text-align: center;
+		background: #ECF0F1;
+	}
+	.itemdetailed .itemtitle ul li a.ys{
+		background: #7F8C8D;
+		width: 90px;
+		height: 30px;
+		display: block;
+		color:white;
+	}
+	p.line{
+		height:2px;
+		background: #C0392B;
+		width: 91px;
+		position: absolute;
+		left: 0px;
+		top: 30px;
+	}
+	.content{
+		width:500px;
+		height: 300px;
+		float: left;
+		display:none;
+		border: 1px solid #7F8C8D;
+	}
+	.content dl dd{
+		font-size:14px;
+		font-family:微軟正黑體;
+		padding:10px;
+	}
+</style>
+</head>
+<body>
+	<div id="top">
+		<div id="head">
+			<div id="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+			<div id="aboutus"><a href="aboutus.html"><span class="icon-company"></span><span>公司簡介</a></div>
+			<div id="fans">
+				<ul>
+					<li><a href="" class="mainnva"><span class="icon-fb"></span></a></li>
+					<li><a href=""><span class="icon-yahoo"></span></a></li>
+					<li class="mainnva"><span class="icon-mail"></span>
+						<div class="iconmain" style="clear:both;">
+							<div class="short">
+								<ul>
+									<li>gafe@taf.com.tw</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><span class="icon-phone"></span></a>
+						<div class="iconmain" style="clear:both;">
+							<div class="short">
+								<ul>
+									<li>(02)2966-5585</li>
+								</ul>
+							</div>			
+					</li>
+					<li><a href=""><span class="icon-address"></span></a>
+						<div class="iconmain" style="clear:both;">
+							<div class="address">
+								<ul>
+									<li>新北市板橋區僑中一街124巷76號</li>
+								</ul>
+							</div>
+						</div>	
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		<!---->
+
+	<div id="navf">
+			<div id="nav"></div>
+	</div>
+	<!---->
+	<!---->
+	<div id="itemnews">
+		<div class="itemshow">
+			<div class="itemflash">
+				<div id="itemimgs">
+					<img src="images/show1.jpg" alt="">
+					<img src="images/show2.jpg" alt="">
+					<img src="images/show3.jpg" alt="">
+					<img src="images/show4.jpg" alt="">
+					<img src="images/show5.jpg" alt="">
+				</div>
+				<div class="itemcir">
+					<ul class="itembutton">
+						<li class="itemhover"><img src="images/show1.jpg" alt=""></li>
+						<li><img src="images/show2.jpg" alt=""></li>
+						<li><img src="images/show3.jpg" alt=""></li>
+						<li><img src="images/show4.jpg" alt=""></li>
+						<li><img src="images/show5.jpg" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="itemessage">
+			<div class="itemname">
+				<h2>精品珍藏區</h2>
+				<p>產品編號：#12587932</p>
+			</div>
+			<div class="breadcrumb">
+				<ul>
+					<li>當前位置：</li>
+					<li><a href="index.html">首頁</a></li>
+					<li>></li>
+					<li><a href="itemonlylist.html">床組</a></li>
+					<li>></li>
+					<li><span>GA班木床組</span></li>
+				</ul>
+			</div>
+			<div class="itemcash">
+				定價<span>:</span><span class="cash">1200</span>元
+			</div>
+			<div class="itemshoplink">
+				<a href=""><span>購買連結</span></a>
+			</div>
+			<div class="itemdetailed">
+				<div class="itemtitle">
+					<ul>
+						<li><a class="ys">產品介紹</a></li>
+						<li><a class="">產品規格</a></li>
+						<li><a class="">內部結構圖</a></li>
+					</ul>
+				</div>
+				<p class="line"></p>
+				<div class="content" style="display:block">
+					<dl>
+						<dt></dt>
+						<dd>特殊塑鋼材質，適合海島型多霧潮濕氣候，尤其山邊海邊濕氣重，塑鋼傢俱正是最好的選擇。</dd>
+						<dd>不腐蝕，蛀蟲.蟑螂.白蟻等不敢進入，可確保傢俱和儲藏物的使用年限及衛生。</dd>
+						<dd>型式色彩。種類多，不變形，不怕水，適合任何場所使用。</dd>
+					</dl>
+				</div>
+				<div class="content">
+					<dl>
+						<dt></dt>
+						<dd>寬 111.9X高47.5X深40.8CM</dd>
+						<dd></dd>
+					</dl>
+				</div>
+				<div class="content">1212222aaa23</div>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<!--尾-->
+	<div id="footer" style="clear:both;">
+		<div id="nfooter">
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fansmain">
+				<ul>	
+					<li>
+						<a href="">
+							<span class="icon-fb"></span>
+							<span class="iconname">加入粉絲團</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-yahoo"></span>
+							<spa class="iconname"n>Yahoo!奇摩拍賣</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-mail"></span>
+							<span class="iconname">電子郵件</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-phone"></span>
+							<span class="iconname">連絡電話</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-what"></span>
+							<span class="iconname">常見問題</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<!---->
+	<div id="totop">
+	<a href="javascript:;" id="btn" title="top"><span class="icon-top"></span></a>
+	</div>
+</body>
+<script>
+	var index=0;//初始化序列號
+	var play=null;
+	$(".itembutton li").click(function(){
+		clearInterval(play);//清除定時器
+		index=$(this).index();//獲取到序列號
+		$(this).addClass("itemhover").siblings().removeClass("itemhover");//siblings()查找li同等級其他li元素
+		$("#itemimgs img").eq(index).show().siblings("img").hide();//eq()查找跟他序列號相同的號碼
+	}).mouseout(function(){
+		autoPlay();
+	});
+	$(".itemdetailed .itemtitle ul li").hover(function(){
+		var _left=$(this).position().left;
+		$("p.line").stop().animate({left:_left},200);
+
+		var index=$(this).index();
+		$(".content").eq(index).show().siblings(".content").hide();
+
+		$(this).find("a").addClass("ys").parent().siblings().find("a").removeClass("ys");
+	});
+</script>
+</html>

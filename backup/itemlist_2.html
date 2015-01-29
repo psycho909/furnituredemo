@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>商品列表</title>
+<script src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/fontstyle.css">
+<link rel="stylesheet" href="css/theme.css">
+<script src="js/theme.js"></script>
+<style>
+	#itemad{
+		width:1000px;
+		height: 300px;
+		background: red;
+		margin: 0px auto;
+		background: url(images/background.jpg) center center no-repeat;
+		background-size:100%;
+	}
+	#itemtitle{
+		width:1000px;
+		height: 50px;
+		background: #f5f5f5;
+		margin: 0px auto;
+	}
+	#itemtitle h2{
+		width:200px;
+		height: 50px;
+		display:block;
+		line-height:50px;
+		font-family:微軟正黑體;
+		font-weight:bolder;
+		color:#CF7600;
+	}
+	.itemtit img{
+		margin: 20px;
+		border-bottom:6px solid white;
+	}
+	#itemlist{
+		width:1000px;
+		margin: 0px auto;
+		box-shadow:0px 1px 3px rgba(0,0,0,0.3), inset 0px 4px 2px -2px rgba(255,255,255,0.7), inset 0px -3px 1px -2px rgba(0,0,0,0.3), inset 0px -20px 200px -100px 	  rgba(0,0,0,0.5);
+	}
+	#itemlist .itempic{
+		width:320px;
+		height: 300px;
+		background: black;
+		margin: 0px auto;
+		float: left;
+		margin: 10px 0px 10px 10px;
+		position: relative;
+	}
+	#itemlist .itempic img{
+		width:320px;
+		height: 300px;
+	}
+	#itemlist .itempic p{
+		width:100%;
+		height: 0px;
+		line-height:30px;
+		text-indent:15px;
+		background: rgba(0, 0, 0, 0.8);
+		color: white;
+		font-family: 微軟正黑體;
+		font-weight:bold;
+		position: absolute;
+		left: 0px;
+		bottom:0px;
+		overflow: hidden;
+	}
+	.clear{ 
+		clear:both;
+	} 
+</style>
+</head>
+<body>
+	<div id="top">
+		<div id="head">
+			<div id="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+			<div id="aboutus"><a href="aboutus.html"><span class="icon-company"></span><span>公司簡介</a></div>
+			<div id="fans">
+				<ul>
+					<li><a href="" class="mainnva"><span class="icon-fb"></span></a></li>
+					<li><a href=""><span class="icon-yahoo"></span></a></li>
+					<li class="mainnva"><span class="icon-mail"></span>
+						<div class="iconmain" style="clear:both;">
+							<div class="short">
+								<ul>
+									<li>gafe@taf.com.tw</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><span class="icon-phone"></span></a>
+						<div class="iconmain" style="clear:both;">
+							<div class="short">
+								<ul>
+									<li>(02)2966-5585</li>
+								</ul>
+							</div>			
+					</li>
+					<li><a href=""><span class="icon-address"></span></a>
+						<div class="iconmain" style="clear:both;">
+							<div class="address">
+								<ul>
+									<li>新北市板橋區僑中一街124巷76號</li>
+								</ul>
+							</div>
+						</div>	
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		<!---->
+
+		<div id="navf">
+			<div id="nav" >
+				<ul>
+					<li><a class="mainnva">床組</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p><a href="itemlist.html" class="onceola">床組</a></p>
+									<li><a href="itemdetailed.html">GA 斑木床組</a></li>
+									<li><a href="itemdetailed.html">GB 桂木床組</a></li>
+									<li><a href="itemdetailed.html">GC 胡桃木床組</a></li>
+									<li><a href="itemdetailed.html">GD 胡桃木床組</a></li>
+									<li><a href="itemdetailed.html">GE 綺麗床組</a></li>
+									<li><a href="itemdetailed.html">GF 綺麗床組</a></li>
+									<li><a href="itemdetailed.html">GG 胡桃浮雕床組</a></li>
+									<li><a href="itemdetailed.html">GC GH 象牙白浮雕床組</a></li>
+									<li><a href="itemdetailed.html">GJ 史奴比床組</a></li>
+									<li><a href="itemdetailed.html">GK 查理布朗床組</a></li>
+									<li><a href="itemdetailed.html">GL 凱蒂貓床組</a></li>
+									<li><a href="itemdetailed.html">GM 米老鼠床組</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">書櫥</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">電腦桌</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">客廳櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">鞋櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">餐廳櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">儲物櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+									<li><a href="#">書櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">自助組裝</a></li>
+									<li><a href="#">自助組裝</a></li>
+									<li><a href="#">自助組裝</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">保管櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+									<li><a href="#">KD櫥櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">公文櫃</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">會議桌</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">會議桌</a></li>
+									<li><a href="#">會議桌</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" class="mainnva">會議桌</a>
+						<div class="menu" style="clear:both;">
+							<div class="onecol">
+								<ul>
+								<p>書櫃</p>
+									<li><a href="#">JP 美耐電腦桌（二）</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+								</ul>
+							</div>
+							<div class="onecol">
+								<ul>
+									<li><a href="#">書櫃:</a></li>
+									<li><a href="#">台灣</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+									<li><a href="#">CD 自助組裝－KD櫥櫃</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<!---->
+	<div id="itemad">
+		<div class="itemtit">
+			<img src="images/itemtitle.png" width="30%" alt="">
+		</div>
+	</div>
+
+	<div id="itemtitle">
+	<h2>產品介紹</h2>
+	</div>
+
+	<div id="itemlist" style="clear:both">
+		<div class="itemcon">
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item1.jpg" alt=""></a>
+					<p>JP 美耐電腦桌（二）</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item2.jpg" alt=""></a>
+					<p>CD 自助組裝－KD櫥櫃</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item3.jpg" alt=""></a>
+					<p>書櫃</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item4.jpg" alt=""></a>
+					<p>JP 美耐電腦桌（二）</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item5.jpg" alt=""></a>
+					<p>CD 自助組裝－KD櫥櫃</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item6.jpg" alt=""></a>
+					<p>書櫃</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item7.jpg" alt=""></a>
+					<p>JP 美耐電腦桌（二）</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item8.jpg" alt=""></a>
+					<p>CD 自助組裝－KD櫥櫃</p>
+			</div>
+			<div class="itempic">
+				<a href="itemonlylist.html"><img src="images/item9.jpg" alt=""></a>
+					<p>書櫃</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!---->
+	<!--尾-->
+	<div id="footer" style="clear:both;">
+		<div id="nfooter">
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fmain">
+				<ul>	
+					<span>Company</span>
+					<li>About</li>
+					<li>Help</li>
+					<li>Contact</li>
+					<li>Shop</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+			<div class="fansmain">
+				<ul>	
+					<li>
+						<a href="">
+							<span class="icon-fb"></span>
+							<span class="iconname">加入粉絲團</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-yahoo"></span>
+							<spa class="iconname"n>Yahoo!奇摩拍賣</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-mail"></span>
+							<span class="iconname">電子郵件</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-phone"></span>
+							<span class="iconname">連絡電話</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="icon-what"></span>
+							<span class="iconname">常見問題</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<!---->
+	<div id="totop">
+	<a href="javascript:;" id="btn" title="top"><span class="icon-top"></span></a>
+	</div>
+</body>
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+	jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:3,trigger:"click",delayTime:1000});
+</script>
+<script>
+	$(".itempic").hover(function(){
+		$(this).find("p").stop().animate({height:"30px"},200);
+	},function(){
+		$(this).find("p").stop().animate({height:"0px"},200);
+	});
+</script>
+</html>
